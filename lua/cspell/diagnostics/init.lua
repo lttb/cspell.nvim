@@ -20,10 +20,10 @@ return h.make_builtin({
         ---@param params GeneratorParams
         args = function(params)
             local cspell_args = {
-                "lint",
                 "--language-id",
                 params.ft,
-                "stdin://" .. params.bufname,
+                "--file",
+                params.bufname,
             }
             params.cwd = params.cwd or vim.loop.cwd()
 
